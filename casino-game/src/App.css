@@ -1,0 +1,16 @@
+*,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+  background-image: url(./assets/casino.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}

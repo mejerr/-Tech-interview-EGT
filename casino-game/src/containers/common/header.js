@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
-import Home from '../../components/home/home';
+import Header from '../../components/header/header';
 
 export default connect((state) => ({
 }), {
 
 }
-)(Home);
+)(Header);
