@@ -13,6 +13,7 @@
     justify-content: center;
     background-color: rgb(24, 26, 27);
     color: rgb(231, 67, 63);
+    text-align: center;
 }
 
 .button.active {

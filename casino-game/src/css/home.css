@@ -1,0 +1,84 @@
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: calc(100vh - 122px);
+    padding: 20px;
+    justify-content: center;
+}
+
+.welcome-screen-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    background: rgba(0,0,0,0.5);
+    align-items: center;
+    height: 60%;
+    border: 2px solid rgb(154, 23, 19);
+}
+
+.welcome-screen-wrapper .welcome-title {
+    font-size: 24px;
+    padding: 20px;
+    color: white;
+    text-align: center;
+}
+
+.welcome-screen-wrapper .welcome-subtitle {
+    font-size: 18px;
+    padding: 20px;
+    color: white;
+    text-align: center;
+}
+
+.welcome-screen-wrapper .welcome-games-buttons {
+    display: flex;
+    justify-content: space-evenly;
+    width: 390px;
+    padding: 20px;
+}
+
+
+.choose-game .button,
+.welcome-screen-wrapper .welcome-games-buttons .choose-game .button,
+.welcome-screen-wrapper .welcome-games-buttons .play-game .button {
+    width: 150px;
+    height: 150px;
+    border-radius: 4px;
+}
+
+@media (max-width: 1000px) {
+    .welcome-screen-wrapper {
+        width: 80%;
+    }
+}
+
+@media (max-width: 700px) {
+    .welcome-screen-wrapper {
+        height: 53%;
+    }
+
+    .choose-game .button,
+    .welcome-screen-wrapper .welcome-games-buttons .choose-game .button,
+    .welcome-screen-wrapper .welcome-games-buttons .play-game .button {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+@media (max-width: 516px) {
+    .welcome-screen-wrapper {
+        width: 80%;
+        height: 70%;
+    }
+
+    .welcome-screen-wrapper .welcome-games-buttons {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .welcome-screen-wrapper .welcome-games-buttons .choose-game .button {
+        margin-bottom: 20px;
+    }
+}
