@@ -1,9 +1,17 @@
 import React, { memo } from 'react';
+// import HeaderButtons from '';
+import egtIcon from '../../assets/egt-icon.png';
 
 const Header = memo((props) => {
-    const {} = props;
+    const { title = "Welcome to EGT Casino games" } = props;
 
-    return <div className="header-container">Header</div>;
+    return (
+        <div className="header-container">
+            <img className="egt-icon" src={egtIcon} alt="egt-logo"></img>
+            <div className="title">{title}</div>
+            {/* <HeaderButtons /> */}
+        </div>
+    );
 });
 
 export default Header;
