@@ -1,5 +1,6 @@
 import React, { memo } from 'react';
 import Button from '../../components/common/buttons/button';
+import WelcomeButtons from '../../containers/common/buttons/welcome-buttons';
 
 const Home = memo((props) => {
     const { currentGame } = props;
@@ -9,17 +10,11 @@ const Home = memo((props) => {
             <div className="welcome-screen-wrapper">
                 <div className="welcome-title">Welcome to our games</div>
                 <div className="welcome-subtitle">Current game is: {currentGame}</div>
+                {/*Should be img tag and current game photo */}
                 <div className="choose-game">
                     <Button title={"Choose game"}/>
                 </div>
-                <div className="welcome-games-buttons">
-                <div className="choose-game">
-                    <Button title={"Choose game"}/>
-                </div>
-                <div className="play-game">
-                    <Button title={"Play game"}/>
-                </div>
-                </div>
+                <WelcomeButtons />
             </div>
         </div>
     );

@@ -1,0 +1,3 @@
+export const PLAY_GAME = 'PLAY_GAME';
+
+export const FINAL_COUNTDOWN_GAME = 'FINAL_COUNTDOWN_GAME';

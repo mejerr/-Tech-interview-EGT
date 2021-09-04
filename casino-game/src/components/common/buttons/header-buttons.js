@@ -6,19 +6,20 @@ import { HOME_TAB, GAMES_TAB } from '../../../constants/tabs';
 
 const HeaderButtons = memo((props) => {
     const { activeTab, history, changeActiveTab } = props;
+    console.log(history)
 
     const navHome = useCallback(() => {
+        changeActiveTab({ currentTab: HOME_TAB });
+
         // No need of navigate, but I want to show route system
         history.push("/home");
-
-        changeActiveTab({ currentTab: HOME_TAB });
     }, [history, changeActiveTab]);
 
     const navGames = useCallback(() => {
+        changeActiveTab({ currentTab: GAMES_TAB });
+
         // No need of navigate, but I want to show route system
         history.push("/games");
-
-        changeActiveTab({ currentTab: GAMES_TAB });
     }, [history, changeActiveTab]);
 
     return (
@@ -34,7 +35,8 @@ const HeaderButtons = memo((props) => {
 
 HeaderButtons.defaultProps = {
     activeTab: HOME_TAB,
-    history: {}
+    history: () => {},
+    changeActiveTab: () => {}
 }
 
 export default HeaderButtons;
