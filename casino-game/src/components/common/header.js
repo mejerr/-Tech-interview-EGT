@@ -3,7 +3,7 @@ import HeaderButtons from '../../containers/common/buttons/header-buttons';
 import egtIcon from '../../assets/egt-icon.png';
 
 const Header = memo((props) => {
-    const { title = "EGT Casino games" } = props;
+    const { title  } = props;
 
     return (
         <div className="header-container">
@@ -14,5 +14,8 @@ const Header = memo((props) => {
     );
 });
 
+Header.exportDefault = {
+    title: 'EGT Casino games'
+};
 
 export default Header;

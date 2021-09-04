@@ -89,7 +89,7 @@ const Games = memo((props) => {
     ]
 
     return (
-        <div className="games-container">
+        <div className="games-container content">
             <div className="games-wrapper">
                 {games.map(renderGames)}
             </div>

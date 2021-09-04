@@ -6,7 +6,7 @@ const Home = memo((props) => {
     const { currentGame } = props;
 
     return (
-        <div className="home-container">
+        <div className="home-container content">
             <div className="welcome-screen-wrapper">
                 <div className="welcome-title">Welcome to our games</div>
                 <div className="welcome-subtitle">Current game is: {currentGame}</div>

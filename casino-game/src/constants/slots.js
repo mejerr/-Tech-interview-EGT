@@ -1,0 +1,2 @@
+export const CONSUME_SLOTS = 'CONSUME_SLOTS';
+export const SELECT_SLOT = 'SELECT_SLOT';
