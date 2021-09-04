@@ -12,7 +12,7 @@ const HeaderButtons = memo((props) => {
         changeActiveTab({ currentTab: HOME_TAB });
 
         // No need of navigate, but I want to show route system
-        history.push("/home");
+        history.push("/");
     }, [history, changeActiveTab]);
 
     const navGames = useCallback(() => {

@@ -98,7 +98,6 @@ const Games = memo((props) => {
 });
 
 Games.defaultProps = {
-
     isActive: false
 }
 

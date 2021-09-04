@@ -5,6 +5,8 @@
     height: calc(100vh - 122px);
     padding: 20px;
     justify-content: center;
+    animation: fadeIn 0.5s;
+
 }
 
 .welcome-screen-wrapper {
