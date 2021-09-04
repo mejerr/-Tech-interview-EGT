@@ -5,7 +5,7 @@ const Slot = memo((props) => {
     const { number, isDisabled, isSelected, selectSlot } = props;
 
     const onClick = useCallback(() => {
-        selectSlot({ index: number });
+        selectSlot({ index: number - 1 });
     }, [selectSlot, number]);
 
     return (
@@ -21,7 +21,7 @@ const Slot = memo((props) => {
 });
 
 Slot.exportDefault = {
-    number: 0,
+    number: -1,
     isDisabled: false,
     isSelected: false,
     selectSlot: () => {}

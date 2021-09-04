@@ -1,11 +1,13 @@
 import { connect } from 'react-redux';
+import { selectSlot, consumeSlots, shouldDisableSlots } from '../../actions/slots';
 import FinalCountdown from '../../components/games/final-countdown-game';
-import { selectSlot, consumeSlots } from '../../actions/slots';
 
 export default connect((state) => ({
-    slots: state.slots.ids
+    slots: state.slots.slotsFinalCountdown.ids,
+    areDisabled: state.slots.slotsFinalCountdown.areDisabled
 }), {
     selectSlot,
-    consumeSlots
+    consumeSlots,
+    shouldDisableSlots
 }
 )(FinalCountdown);

@@ -2,24 +2,25 @@ import React, { memo, useCallback, useEffect } from 'react';
 import Slot from '../common/slot'
 
 const FinalCountdown = memo((props) => {
-    const { slots, selectSlot, consumeSlots } = props;
+    const { slots, selectSlot, consumeSlots, shouldDisableSlots, areDisabled } = props;
 
-    const renderSlots = useCallback(({ index, isSelected }) => {
-        return (
-            <Slot
-                key={index}
-                selectSlot={selectSlot}
-                number={index}
-                isSelected={isSelected}
-            />
-        )
-    }, [selectSlot]);
+    const renderSlots = useCallback(({ index, isSelected }) => (
+        <Slot
+            key={index}
+            selectSlot={selectSlot}
+            number={index}
+            isSelected={isSelected}
+            isDisabled={areDisabled}
+        />
+    ), [selectSlot, areDisabled]);
 
     useEffect(() => {
         if (!slots.length) {
             consumeSlots();
         }
-    }, [consumeSlots, slots])
+
+        shouldDisableSlots();
+    }, [consumeSlots, slots, shouldDisableSlots])
 
     return (
         <div className="final-countdown-container content">
@@ -37,9 +38,11 @@ const FinalCountdown = memo((props) => {
 });
 
 FinalCountdown.defaultProps = {
+    areDisabled: false,
     slots: [],
     selectSlot: () => {},
-    consumeSlots: () => {}
+    consumeSlots: () => {},
+    shouldDisableSlots: () => {}
 }
 
 export default FinalCountdown;

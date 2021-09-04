@@ -18,3 +18,8 @@
 .slot-container.selected .slot-number {
     color: var(--color-red);
 }
+
+.slot-container:not(.selected).disabled {
+    background: rgba(var(--color-red), 0.1);
+    pointer-events: none;
+}

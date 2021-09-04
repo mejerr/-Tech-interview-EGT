@@ -6,7 +6,6 @@ import { HOME_TAB, GAMES_TAB } from '../../../constants/tabs';
 
 const HeaderButtons = memo((props) => {
     const { activeTab, history, changeActiveTab } = props;
-    console.log(history)
 
     const navHome = useCallback(() => {
         changeActiveTab({ currentTab: HOME_TAB });
