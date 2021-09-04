@@ -6,6 +6,8 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "classnames": "^2.3.1",
+    "immer": "^9.0.6",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.4",
@@ -21,7 +23,6 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "start:watch": "react-scripts start watch"
-
   },
   "eslintConfig": {
     "extends": [
