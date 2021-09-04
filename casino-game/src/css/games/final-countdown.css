@@ -1,0 +1,16 @@
+.final-countdown-wrapper {
+    width: 40%;
+    height: 60%;
+    background: var(--color-white);
+}
+
+.slots-container {
+    display: grid;
+    grid-template-columns: repeat(10,minmax(35px, 1fr));
+    grid-template-rows: repeat(8,minmax(35px, 1fr));
+    grid-gap: 10px;
+    width: 80%;
+    height: 70%;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px 20px;
+}

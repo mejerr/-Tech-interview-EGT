@@ -1,0 +1,20 @@
+.slot-container {
+    margin: 2px;
+    background: rgb(193,193,193);
+    border: 1px solid black;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+.slot-container.selected .slot-number,
+.slot-container .slot-number {
+    color: var(--color-black);
+}
+
+.slot-container.selected {
+    border: 1px solid var(--color-red)
+}
+
+.slot-container.selected .slot-number {
+    color: var(--color-red);
+}
