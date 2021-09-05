@@ -1,5 +1,5 @@
 .final-countdown-wrapper {
-    width: 40%;
+    width: 50%;
     background: var(--color-white);
     border-radius: 4px;
     background: var(--color-black);
@@ -26,7 +26,6 @@
     padding: 30px 20px;
 
 }
-.final-countdown-footer-container .field-container.final-countdown .field-number,
 .final-countdown-footer-container .field-container {
     width: 100px;
     height: 100px;
@@ -44,15 +43,116 @@
     color: var(--color-black);
     font-size: 18px;
     font-weight: bold;
+    background: var(--color-red);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: none;
+    width: 100%;
+    min-height: 50%;
 }
 
 .final-countdown-footer-container .field-container .title {
     width: 100%;
+    min-height: calc(50% + 10px);
     color: var(--color-white);
     border: none;
     background: var(--color-black);
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+@media (max-width: 1400px) {
+    .final-countdown-wrapper .timer-container {
+        width: 60px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .final-countdown-wrapper  {
+        width: 70%;
+    }
+}
+
+@media (max-width: 850px) {
+    .final-countdown-wrapper .timer-container {
+        width: 50px;
+        height: 30px;
+    }
+
+    .final-countdown-wrapper  {
+        width: 80%;
+    }
+}
+
+@media (max-width: 730px) {
+
+
+    .final-countdown-wrapper  {
+        width: 90%;
+    }
+
+    .slots-container {
+        grid-template-columns: repeat(10,minmax(30px, 1fr));
+        grid-template-rows: repeat(8,minmax(30px, 1fr));
+    }
+
+    .final-countdown-footer-container .field-container {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+@media (max-width: 565px) {
+    .final-countdown-wrapper .timer-container {
+        width: 50px;
+        height: 30px;
+        top: -50px;
+        right: 40%;
+    }
+
+    .final-countdown-wrapper  {
+        width: 80%;
+    }
+
+    .slots-container {
+        grid-template-columns: repeat(10,minmax(25px, 1fr));
+        grid-template-rows: repeat(8,minmax(25px, 1fr));
+        grid-gap: 5px;
+        padding-top: 10px;
+    }
+}
+
+@media (max-width: 500px) {
+    .final-countdown-wrapper .timer-container {
+        width: 50px;
+        height: 30px;
+        top: -50px;
+        right: 40%;
+    }
+    .final-countdown-wrapper  {
+        width: 100%;
+    }
+
+    .final-countdown-footer-container .field-container {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@media (max-height: 1000px) {
+    .final-countdown-wrapper .timer-container {
+        width: 40px;
+        height: 20px;
+        top: 10px;
+        right: 10px;
+    }
+}
+/*Comments*/
 .final-countdown-comments-container {
     display: flex;
     flex-direction: column;
@@ -95,3 +195,4 @@
     justify-content: center;
     margin-right: 7px;
 }
+/*Comments*/

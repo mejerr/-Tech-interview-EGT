@@ -16,5 +16,13 @@
 .timer-container .time {
     text-align: center;
     font-weight: bold;
-    color: var(--color-white)
+    color: var(--color-white);
+    position: relative;
+}
+
+@media (min-height: 1000px) {
+    .loader-container {
+        width: 100%;
+        width: 100%;
+    }
 }
