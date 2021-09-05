@@ -15,7 +15,10 @@ const INITIAL_STATE = {
     totalSum: 0,
     drawCounts: 1,
     betAmount: 1,
-    comments: []
+    comments: {
+        ids: []
+    },
+
 };
 
 const reducer = produce((draftState = INITIAL_STATE, { type, payload = {} }) => {
@@ -77,7 +80,7 @@ const reducer = produce((draftState = INITIAL_STATE, { type, payload = {} }) => 
         case CONSUME_COMMENTS:
             const { comments } = payload;
 
-            draftState.comments = comments;
+            draftState.comments.ids = comments;
 
             return draftState;
         default:

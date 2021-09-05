@@ -2,9 +2,10 @@ import React, { memo, useCallback, useEffect } from 'react';
 import Slot from '../../common/slot'
 import FinalCountdownFooter from '../../../containers/games/final-countdown-game/final-countdown-footer';
 import Timer from '../../../components/common/timer';
+import Comments from '../../../containers/games/final-countdown-game/final-countdown-comments';
 
 const FinalCountdown = memo((props) => {
-    const { areDisabled, slots, selectSlot, consumeSlots, deselectSlot, showComments } = props;
+    const { areDisabled, slots, comments, selectSlot, consumeSlots, deselectSlot, showComments, initComments } = props;
 
     const renderSlots = useCallback(({ index, isSelected }) => (
         <Slot
@@ -20,9 +21,10 @@ const FinalCountdown = memo((props) => {
     useEffect(() => {
         if (!slots.length) {
             consumeSlots();
+            initComments();
         }
 
-    }, [consumeSlots, slots])
+    }, [consumeSlots, slots, initComments])
 
     return (
         <div className="final-countdown-container content">
@@ -32,6 +34,7 @@ const FinalCountdown = memo((props) => {
                 </div>
                 <Timer onFinish={showComments}/>
                 <FinalCountdownFooter />
+                {comments.length ? <Comments /> : null}
             </div>
         </div>
     );
@@ -40,10 +43,12 @@ const FinalCountdown = memo((props) => {
 FinalCountdown.defaultProps = {
     areDisabled: false,
     slots: [],
+    comments: [],
     selectSlot: () => {},
     deselectSlot: () => {},
     consumeSlots: () => {},
-    showComments: () => {}
+    showComments: () => {},
+    initComments: () => {}
 }
 
 export default FinalCountdown;

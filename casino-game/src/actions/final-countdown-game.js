@@ -5,7 +5,8 @@ import {
     CHANGE_BET_AMOUNT,
     CHANGE_DRAW_COUNTS,
     SHOW_COMMENTS,
-    CONSUME_COMMENTS
+    CONSUME_COMMENTS,
+    INIT_COMMENTS
 } from '../constants/final-countdown';
 
 
@@ -40,5 +41,9 @@ export const showComments = () => ({
 export const consumeComments = ({ comments }) => ({
     type: CONSUME_COMMENTS,
     payload: { comments }
+});
+
+export const initComments = () => ({
+    type: INIT_COMMENTS
 });
 

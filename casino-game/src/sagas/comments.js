@@ -1,16 +1,29 @@
 import { call, put, select, takeLatest } from 'redux-saga/effects';
 import { showComments,  } from '../services/final-countdown-game';
 import { consumeComments  } from '../actions/final-countdown-game';
-import { SHOW_COMMENTS } from "../constants/final-countdown";
+import { SHOW_COMMENTS, INIT_COMMENTS } from "../constants/final-countdown";
 
 function* onShowComments() {
     const selectedSlots = yield select(state => state.finalCountdown.selectedIds);
+    const allComments = yield select(state => state.finalCountdown.comments.ids);
+
+    if (!selectedSlots.length) {
+        return;
+    }
 
     try {
         let comments = [];
         for (let slot of selectedSlots) {
             const { data } = yield call(showComments, { commentId: [slot] });
-            comments = [...comments, comments.includes(slot) ? [...comments] : data];
+
+            comments = allComments.reduce((accum, comment, index, arr) => {
+            if (allComments[index][0].postId === slot) {
+                accum = [...accum, data]
+            } else {
+                accum = arr;
+            }
+            return accum;
+            }, []);
         }
 
         yield put(consumeComments({ comments }));
@@ -20,6 +33,28 @@ function* onShowComments() {
     }
 }
 
+function* onInitComments() {
+    const allComments = yield select(state => state.finalCountdown.comments.ids);
+
+    if (allComments.length) {
+        return;
+    }
+
+    try {
+        let comments = [];
+        for (let i = 1; i <= 10; i++) {
+            const { data } = yield call(showComments, { commentId: [i] });
+            comments = [...comments, data]
+        }
+
+        yield put(consumeComments({ comments: comments.sort((a, b) => b[0].postId - a[0].postId ) }));
+    }
+    catch (error) {
+        console.error(error);
+    }
+}
+
 export default function* watchComments() {
     yield takeLatest(SHOW_COMMENTS, onShowComments)
+    yield takeLatest(INIT_COMMENTS, onInitComments)
 }

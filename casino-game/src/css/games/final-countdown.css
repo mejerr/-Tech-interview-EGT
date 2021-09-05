@@ -1,6 +1,5 @@
 .final-countdown-wrapper {
     width: 40%;
-    height: 60%;
     background: var(--color-white);
     border-radius: 4px;
     background: var(--color-black);
@@ -13,17 +12,18 @@
     grid-template-rows: repeat(8,minmax(35px, 1fr));
     grid-gap: 10px;
     width: 80%;
-    height: 70%;
+    height: 50%;
     padding: 20px 20px;
 }
 
 .final-countdown-footer-container {
     display: flex;
     flex: 1;
-    height: calc(30% - 40px);
     align-items: center;
     justify-content: space-evenly;
     border-top: 2px solid var(--color-1);
+    border-bottom: 2px solid var(--color-1);
+    padding: 30px 20px;
 
 }
 .final-countdown-footer-container .field-container.final-countdown .field-number,
@@ -51,4 +51,47 @@
     color: var(--color-white);
     border: none;
     background: var(--color-black);
+}
+
+.final-countdown-comments-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--color-black);
+    padding: 0 20px;
+    animation: fadeIn 0.5s;
+}
+
+.final-countdown-comments-container .comment-container {
+    padding: 5px 0;
+    position: relative;
+    display: flex;
+}
+
+.final-countdown-comments-container .comment-container::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    width: calc(100% - 20px);
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.final-countdown-comments-container .comment-container:last-of-type::after {
+    content: none;
+}
+
+.final-countdown-comments-container .comment-container .comments-content,
+.final-countdown-comments-container .comment-container .comment-id {
+    color: var(--color-white)
+}
+
+.final-countdown-comments-container .comment-container .comment-id {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 7px;
 }
