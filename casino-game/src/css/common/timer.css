@@ -1,0 +1,20 @@
+.timer-container {
+    position: absolute;
+    background: rgba(255,255,255, 0.3);
+    top: 20px;
+    right: 20px;
+    width: 80px;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    border: 3px solid var(--color-gold);
+}
+
+.timer-container .time {
+    text-align: center;
+    font-weight: bold;
+    color: var(--color-white)
+}
