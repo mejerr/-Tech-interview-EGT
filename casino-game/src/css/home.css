@@ -22,6 +22,11 @@
     text-align: center;
 }
 
+.welcome-screen-wrapper .welcome-subtitle span {
+    color: var(--color-gold);
+    font-weight: bold;
+}
+
 .welcome-screen-wrapper .welcome-games-buttons {
     display: flex;
     justify-content: space-evenly;
@@ -29,6 +34,11 @@
     padding: 20px;
 }
 
+.welcome-screen-wrapper .current-game-icon {
+    width: 150px;
+    height: 150px;
+    border: 2px solid var(--color-gold);
+}
 
 .choose-game .button,
 .welcome-screen-wrapper .welcome-games-buttons .choose-game .button,

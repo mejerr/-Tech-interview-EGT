@@ -1,104 +1,42 @@
 import React, { memo, useCallback } from 'react';
+import classNames from 'classnames';
+import { GAMES } from '../../constants/games';
 
 const Games = memo((props) => {
-    const { } = props;
+    const { setCurrentGame, history } = props;
 
-    const renderGames = useCallback(({ gameIcon, gameAlt, title }) => {
+    const onClick = useCallback((game) => {
+        if (game.isDisabled) {
+            return;
+        }
+
+        setCurrentGame({ currentGame: game });
+        history.push('/');
+    }, [setCurrentGame, history]);
+
+    const renderGames = useCallback(({ gameName = '',gameIcon, gameAlt, title, isDisabled }, index) => {
         return (
-            <div className={`game ${gameAlt}`}>
+            <div className={classNames('game', [gameAlt], {
+                'disabled': isDisabled
+            })} key={index} onClick={() => onClick({ gameName, gameIcon, gameAlt, title, isDisabled })}>
                 <div className="game-title">{title}</div>
-                <img key={gameAlt}className={gameAlt} src="../assets/test-icon.jpg" alt={gameAlt} />
+                <img className={gameAlt} src={gameIcon} alt={gameAlt} />
             </div>
         )
     }, []);
 
-    const games = [
-        {
-            gameIcon: "../assets/casino.png",
-            gameAlt: "test-game2-icon",
-            title: 'Test game'
-        },
-        {
-            gameIcon: "../assets/test-game-icon.png",
-            gameAlt: "my-game3-icon",
-            title: "My game"
-        },
-        {
-            gameIcon: "../assets/test-game-icon.png",
-            gameAlt: "my-game4-icon",
-            title: "My game"
-        },
-        {
-            gameIcon: "../assets/test-game-icon.png",
-            gameAlt: "my-game-icon",
-            title: "My game"
-        },
-        {
-            gameIcon: "../assets/test-game-icon.png",
-            gameAlt: "my-game-icon",
-            title: "My game"
-        },
-        {
-            gameIcon: "../assets/test-game-icon.png",
-            gameAlt: "my-game-icon",
-            title: "My game"
-        },
-        {
-            gameIcon: "../assets/test-game-icon.png",
-            gameAlt: "my-game-icon",
-            title: "My game"
-        },
-        {
-            gameIcon: "../assets/test-game-icon.png",
-            gameAlt: "my-game-icon",
-            title: "My game"
-        },
-        {
-            gameIcon: "../assets/test-game-icon.png",
-            gameAlt: "my-game-icon",
-            title: "My game"
-        },
-        {
-            gameIcon: "../assets/test-game-icon.png",
-            gameAlt: "my-game-icon",
-            title: "My game"
-        },
-        {
-            gameIcon: "../assets/test-game-icon.png",
-            gameAlt: "my-game-icon",
-            title: "My game"
-        },
-        {
-            gameIcon: "../assets/test-game-icon.png",
-            gameAlt: "my-game-icon",
-            title: "My game"
-        },
-        {
-            gameIcon: "../assets/test-game-icon.png",
-            gameAlt: "my-game-icon",
-            title: "My game"
-        },        {
-            gameIcon: "../assets/test-game-icon.png",
-            gameAlt: "my-game-icon",
-            title: "My game"
-        },        {
-            gameIcon: "../assets/test-game-icon.png",
-            gameAlt: "my-game-icon",
-            title: "My game"
-        }
-    ]
-
     return (
         <div className="games-container content">
             <div className="games-wrapper">
-                {games.map(renderGames)}
+                {GAMES.map(renderGames)}
             </div>
         </div>
     );
 });
 
 Games.defaultProps = {
-    isActive: false
+    setCurrentGame: () => {},
+    history: () => {},
 }
 
 export default Games;

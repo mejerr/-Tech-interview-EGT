@@ -7,7 +7,7 @@ import { GAMES_TAB } from '../../../constants/tabs';
 import { FINAL_COUNTDOWN_GAME } from '../../../constants/games';
 
 const WelcomeButtons = memo((props) => {
-    const { history, changeActiveTab } = props;
+    const { currentGame, history, changeActiveTab } = props;
 
     const onChooseGameClick = useCallback(() => {
         changeActiveTab({ currentTab: GAMES_TAB });
@@ -20,8 +20,8 @@ const WelcomeButtons = memo((props) => {
         changeActiveTab({ currentTab: FINAL_COUNTDOWN_GAME });
 
         // No need of navigate, but I want to show route system
-        history.push("/games/fn");
-    }, [history, changeActiveTab]);
+        history.push(`/games/${currentGame}`);
+    }, [history, changeActiveTab, currentGame]);
 
     return (
         <div className="welcome-games-buttons">
@@ -36,8 +36,9 @@ const WelcomeButtons = memo((props) => {
 });
 
 WelcomeButtons.defaultProps = {
+    currentGame: '',
     history: () => {},
     changeActiveTab: () => {}
-} 
+}
 
 export default WelcomeButtons;
