@@ -1,13 +1,16 @@
 import React, { memo } from 'react';
+import TotalField from '../../common/total-field';
 
 const FinalCountdownFooter = memo((props) => {
     const { } = props;
 
     return (
         <div className="final-countdown-footer-container">
-            <div className="total-field"></div>
-            <div className="draw-counts-field"></div>
-            <div className="bet-sum-field"></div>
+            <TotalField />
+            <TotalField />
+            <TotalField />
+            {/* {<div className="draw-counts-field"></div>
+            <div className="bet-sum-field"></div>} */}
         </div>
     );
 });

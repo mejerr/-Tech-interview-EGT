@@ -25,7 +25,7 @@ const Slot = memo((props) => {
     );
 });
 
-Slot.exportDefault = {
+Slot.defaultProps = {
     number: -1,
     isDisabled: false,
     isSelected: false,

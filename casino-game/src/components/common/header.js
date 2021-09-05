@@ -14,7 +14,7 @@ const Header = memo((props) => {
     );
 });
 
-Header.exportDefault = {
+Header.defaultProps = {
     title: 'EGT Casino games'
 };
 

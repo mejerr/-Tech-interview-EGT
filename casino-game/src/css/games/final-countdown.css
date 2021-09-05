@@ -3,6 +3,7 @@
     height: 60%;
     background: var(--color-white);
     border-radius: 4px;
+    background: var(--color-black);
 }
 
 .slots-container {
@@ -12,6 +13,32 @@
     grid-gap: 10px;
     width: 80%;
     height: 70%;
-    background: var(--color-black);
     padding: 20px 20px;
+}
+
+.final-countdown-footer-container {
+    display: flex;
+    flex: 1;
+    height: calc(30% - 40px);
+    align-items: center;
+    justify-content: space-evenly;
+    border-top: 2px solid var(--color-1);
+
+}
+
+.final-countdown-footer-container .total-field-container {
+    width: 100px;
+    height: 45px;
+    background: var(--color-red);
+    border: 1px solid  var(--color-white);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.final-countdown-footer-container .total-field-container .total-field-number {
+    color: var(--color-black);
+    font-size: 18px;
+    font-family: bold;
 }
