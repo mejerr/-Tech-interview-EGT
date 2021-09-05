@@ -5,7 +5,7 @@ import {
     DESELECT_SLOT,
     CHANGE_BET_AMOUNT,
     CHANGE_DRAW_COUNTS,
-    SHOW_COMMENTS
+    CONSUME_COMMENTS
 } from '../constants/final-countdown';
 
 const INITIAL_STATE = {
@@ -18,7 +18,7 @@ const INITIAL_STATE = {
     comments: []
 };
 
-const reducer = produce((draftState = INITIAL_STATE, { type, payload }) => {
+const reducer = produce((draftState = INITIAL_STATE, { type, payload = {} }) => {
     switch (type) {
         case CONSUME_SLOTS:
             if (!draftState.ids?.length) {
@@ -74,9 +74,10 @@ const reducer = produce((draftState = INITIAL_STATE, { type, payload }) => {
             draftState.totalSum = draftState.drawCounts * draftState.betAmount * (0.2 * draftState.selectedIds.length);
 
             return draftState;
-        case SHOW_COMMENTS:
+        case CONSUME_COMMENTS:
+            const { comments } = payload;
 
-            draftState.comments = [];
+            draftState.comments = comments;
 
             return draftState;
         default:

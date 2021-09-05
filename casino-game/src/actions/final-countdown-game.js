@@ -1,4 +1,12 @@
-import { SELECT_SLOT, CONSUME_SLOTS, DESELECT_SLOT, CHANGE_BET_AMOUNT, CHANGE_DRAW_COUNTS, SHOW_COMMENTS } from '../constants/final-countdown';
+import {
+    SELECT_SLOT,
+    CONSUME_SLOTS,
+    DESELECT_SLOT,
+    CHANGE_BET_AMOUNT,
+    CHANGE_DRAW_COUNTS,
+    SHOW_COMMENTS,
+    CONSUME_COMMENTS
+} from '../constants/final-countdown';
 
 
 export const consumeSlots = () => ({
@@ -27,5 +35,10 @@ export const changeDrawCounts = ({ counts }) => ({
 
 export const showComments = () => ({
     type: SHOW_COMMENTS
+});
+
+export const consumeComments = ({ comments }) => ({
+    type: CONSUME_COMMENTS,
+    payload: { comments }
 });
 
