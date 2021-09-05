@@ -2,6 +2,7 @@
     width: 40%;
     height: 60%;
     background: var(--color-white);
+    border-radius: 4px;
 }
 
 .slots-container {
@@ -11,6 +12,6 @@
     grid-gap: 10px;
     width: 80%;
     height: 70%;
-    background: rgba(0, 0, 0, 0.5);
+    background: var(--color-black);
     padding: 20px 20px;
 }

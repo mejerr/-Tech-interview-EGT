@@ -5,10 +5,19 @@
     align-items: center;
     display: flex;
     justify-content: center;
+    border-radius: 4px;
+
 }
+
+.slot-container.selected {
+    background: rgba(153, 0, 0, 0.9);
+}
+
 .slot-container.selected .slot-number,
 .slot-container .slot-number {
     color: var(--color-black);
+    font-family: bold;
+
 }
 
 .slot-container.selected {
@@ -16,10 +25,10 @@
 }
 
 .slot-container.selected .slot-number {
-    color: var(--color-red);
+    color: var(--color-white);
 }
 
 .slot-container:not(.selected).disabled {
-    background: rgba(var(--color-red), 0.1);
+    background: rgba(153, 0, 0, 0.5);
     pointer-events: none;
 }
