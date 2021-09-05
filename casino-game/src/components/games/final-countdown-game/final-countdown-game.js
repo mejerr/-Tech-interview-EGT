@@ -1,10 +1,10 @@
 import React, { memo, useCallback, useEffect } from 'react';
 import Slot from '../../common/slot'
 import FinalCountdownFooter from '../../../containers/games/final-countdown-game/final-countdown-footer';
-import Timer from '../../common/timer';
+import Timer from '../../../components/common/timer';
 
 const FinalCountdown = memo((props) => {
-    const { areDisabled, slots, selectSlot, consumeSlots, deselectSlot } = props;
+    const { areDisabled, slots, selectSlot, consumeSlots, deselectSlot, showComments } = props;
 
     const renderSlots = useCallback(({ index, isSelected }) => (
         <Slot
@@ -30,7 +30,7 @@ const FinalCountdown = memo((props) => {
                 <div className="slots-container">
                     {slots.map(renderSlots)}
                 </div>
-                <Timer />
+                <Timer onFinish={showComments}/>
                 <FinalCountdownFooter />
             </div>
         </div>
@@ -42,7 +42,8 @@ FinalCountdown.defaultProps = {
     slots: [],
     selectSlot: () => {},
     deselectSlot: () => {},
-    consumeSlots: () => {}
+    consumeSlots: () => {},
+    showComments: () => {}
 }
 
 export default FinalCountdown;

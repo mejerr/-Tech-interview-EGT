@@ -4,8 +4,9 @@ import {
     CONSUME_SLOTS,
     DESELECT_SLOT,
     CHANGE_BET_AMOUNT,
-    CHANGE_DRAW_COUNTS
-} from '../constants/slots';
+    CHANGE_DRAW_COUNTS,
+    SHOW_COMMENTS
+} from '../constants/final-countdown';
 
 const INITIAL_STATE = {
     ids: [],
@@ -14,6 +15,7 @@ const INITIAL_STATE = {
     totalSum: 0,
     drawCounts: 1,
     betAmount: 1,
+    comments: []
 };
 
 const reducer = produce((draftState = INITIAL_STATE, { type, payload }) => {
@@ -70,6 +72,11 @@ const reducer = produce((draftState = INITIAL_STATE, { type, payload }) => {
 
             draftState.drawCounts = Number(counts);
             draftState.totalSum = draftState.drawCounts * draftState.betAmount * (0.2 * draftState.selectedIds.length);
+
+            return draftState;
+        case SHOW_COMMENTS:
+
+            draftState.comments = [];
 
             return draftState;
         default:

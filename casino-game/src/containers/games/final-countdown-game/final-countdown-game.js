@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { selectSlot, consumeSlots, deselectSlot } from '../../../actions/final-countdown-game';
+import { selectSlot, consumeSlots, deselectSlot, showComments } from '../../../actions/final-countdown-game';
 import { areSlotsDisabledSelector } from '../../../selectors/slots';
 import FinalCountdown from '../../../components/games/final-countdown-game/final-countdown-game';
 
@@ -9,6 +9,7 @@ export default connect((state) => ({
 }), {
     selectSlot,
     deselectSlot,
-    consumeSlots
+    consumeSlots,
+    showComments
 }
 )(FinalCountdown);
