@@ -1,5 +1,6 @@
 import React, { memo, useCallback, useEffect } from 'react';
-import Slot from '../common/slot'
+import Slot from '../../common/slot'
+import FinalCountdownFooter from '../../../containers/games/final-countdown-game/final-countdown-footer';
 
 const FinalCountdown = memo((props) => {
     const { areDisabled, slots, selectSlot, consumeSlots, deselectSlot } = props;
@@ -29,9 +30,7 @@ const FinalCountdown = memo((props) => {
                     {slots.map(renderSlots)}
                 </div>
                 <div className="timer-field"></div>
-                <div className="total-field"></div>
-                <div className="draw-counts-field"></div>
-                <div className="bet-sum-field"></div>
+                <FinalCountdownFooter />
             </div>
         </div>
     );
