@@ -1,4 +1,4 @@
-import { SELECT_SLOT, CONSUME_SLOTS, DESELECT_SLOT, CHANGE_BET_AMOUNT } from '../constants/slots';
+import { SELECT_SLOT, CONSUME_SLOTS, DESELECT_SLOT, CHANGE_BET_AMOUNT, CHANGE_DRAW_COUNTS } from '../constants/slots';
 
 
 export const consumeSlots = () => ({
@@ -18,5 +18,10 @@ export const deselectSlot = ({ number }) => ({
 export const changeBetAmount = ({ amount }) => ({
     type: CHANGE_BET_AMOUNT,
     payload: { amount }
+});
+
+export const changeDrawCounts = ({ counts }) => ({
+    type: CHANGE_DRAW_COUNTS,
+    payload: { counts }
 });
 

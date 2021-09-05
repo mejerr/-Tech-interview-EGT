@@ -1,12 +1,19 @@
 import produce from "immer"
-import { SELECT_SLOT, CONSUME_SLOTS, DESELECT_SLOT, CHANGE_BET_AMOUNT } from '../constants/slots';
+import {
+    SELECT_SLOT,
+    CONSUME_SLOTS,
+    DESELECT_SLOT,
+    CHANGE_BET_AMOUNT,
+    CHANGE_DRAW_COUNTS
+} from '../constants/slots';
 
 const INITIAL_STATE = {
     ids: [],
     selectedIds: [],
     areDisabled: false,
+    totalSum: 0,
+    drawCounts: 1,
     betAmount: 1,
-    totalSum: 0
 };
 
 const reducer = produce((draftState = INITIAL_STATE, { type, payload }) => {
@@ -35,6 +42,9 @@ const reducer = produce((draftState = INITIAL_STATE, { type, payload }) => {
                 index
             ]
 
+            draftState.totalSum = draftState.betAmount * draftState.drawCounts * (0.2 * draftState.selectedIds.length);
+
+
             return draftState;
         case DESELECT_SLOT:
             const { number } = payload;
@@ -42,16 +52,24 @@ const reducer = produce((draftState = INITIAL_STATE, { type, payload }) => {
             draftState.ids[number - 1] = {
                 ...draftState.ids[number - 1],
                 isSelected: false
-            }
+            };
 
             draftState.selectedIds =
-                draftState.selectedIds.filter(selectedIndex => selectedIndex !== number)
+                draftState.selectedIds.filter(selectedIndex => selectedIndex !== number);
 
             return draftState;
         case CHANGE_BET_AMOUNT:
             const { amount } = payload;
 
-            draftState.betAmount = Number(amount).toFixed(2);
+            draftState.betAmount = Number(amount);
+            draftState.totalSum = draftState.betAmount * draftState.drawCounts * (0.2 * draftState.selectedIds.length);
+
+            return draftState;
+        case CHANGE_DRAW_COUNTS:
+            const { counts } = payload;
+
+            draftState.drawCounts = Number(counts);
+            draftState.totalSum = draftState.drawCounts * draftState.betAmount * (0.2 * draftState.selectedIds.length);
 
             return draftState;
         default:

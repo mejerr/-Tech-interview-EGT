@@ -9,7 +9,7 @@ const BetAmount = memo((props) => {
     }, [changeBetAmount]);
 
     return (
-        <div className={classNames('bet-about-container', 'field-container', {
+        <div className={classNames('bet-amount-container', 'field-container', {
             [className] : className
             })}
         >
