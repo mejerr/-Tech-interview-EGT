@@ -13,6 +13,7 @@ const BetAmount = memo((props) => {
             [className] : className
             })}
         >
+            <div className="title">{"Bet"}</div>
             <input className="field-number" value={amount} onChange={onChange}></input>
         </div>
     );

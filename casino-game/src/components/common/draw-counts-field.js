@@ -13,6 +13,7 @@ const DrawCountsField = memo((props) => {
             [className] : className
             })}
         >
+            <div className="title">{"Draw counts"}</div>
             <input className="field-number" value={drawCounts} onChange={onChange}></input>
         </div>
     );

@@ -13,6 +13,7 @@ const TotalField = memo((props) => {
             [className] : className
             })} onClick={onClick}
         >
+            <div className="title">{"Total amount"}</div>
             <div className="field-number">{number}</div>
         </div>
     );

@@ -28,19 +28,26 @@
 .final-countdown-footer-container .field-container.final-countdown .field-number,
 .final-countdown-footer-container .field-container {
     width: 100px;
-    height: 45px;
+    height: 100px;
     background: var(--color-red);
-    border: 1px solid  var(--color-white);
     border-radius: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+    flex-direction: column;
+    border: none;
 }
 
-.final-countdown-footer-container .field-container .field-number::placeholder,
 .final-countdown-footer-container .field-container .field-number {
     color: var(--color-black);
     font-size: 18px;
     font-family: bold;
+}
+
+.final-countdown-footer-container .field-container .title {
+    width: 100%;
+    color: var(--color-white);
+    border: none;
+    background: var(--color-black);
 }
