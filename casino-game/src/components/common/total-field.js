@@ -4,14 +4,10 @@ import classNames from 'classnames';
 const TotalField = memo((props) => {
     const { className, number } = props;
 
-    const onClick = useCallback(() => {
-
-    }, []);
-
     return (
         <div className={classNames('total-field-container', 'field-container', {
             [className] : className
-            })} onClick={onClick}
+            })}
         >
             <div className="title">{"Total amount"}</div>
             <div className="field-number">{number}</div>
@@ -21,7 +17,7 @@ const TotalField = memo((props) => {
 
 TotalField.defaultProps = {
     className: '',
-    number: 0,
+    number: 0
 };
 
 export default TotalField;
