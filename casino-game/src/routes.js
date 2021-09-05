@@ -5,8 +5,8 @@ import FinalCountdown from './containers/games/final-countdown-game/final-countd
 
 export const routes = (
     <Switch>
-        <Route path='/games/fn' component={FinalCountdown} />
-        <Route path='/games' component={Games} />
+        <Route path='/games/final-countdown' component={FinalCountdown} />
+        <Route path='/games' exact component={Games} />
         <Route path='/' exact component={Home} />
         <Redirect to='/' />
     </Switch>

@@ -5,8 +5,8 @@ import WelcomeButtons from '../../../components/common/buttons/welcome-buttons';
 
 export default withRouter(connect((state) => {
     return {
+        currentGame: state.games.currentGame.gameAlt
     };
 }, {
     changeActiveTab
-}
-)(WelcomeButtons));
+})(WelcomeButtons));

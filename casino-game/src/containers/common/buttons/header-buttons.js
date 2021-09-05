@@ -10,5 +10,4 @@ export default withRouter(connect((state) => {
     };
 }, {
     changeActiveTab
-}
-)(HeaderButtons));
+})(HeaderButtons));
