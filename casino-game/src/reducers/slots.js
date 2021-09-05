@@ -1,11 +1,13 @@
 import produce from "immer"
-import { SELECT_SLOT, CONSUME_SLOTS, DESELECT_SLOT } from '../constants/slots';
+import { SELECT_SLOT, CONSUME_SLOTS, DESELECT_SLOT, CHANGE_BET_AMOUNT } from '../constants/slots';
 
 const INITIAL_STATE = {
     slotsFinalCountdown: {
         ids: [],
         selectedIds: [],
-        areDisabled: false
+        areDisabled: false,
+        betAmount: 1,
+        totalSum: 0
     }
 };
 
@@ -46,6 +48,12 @@ const reducer = produce((draftState = INITIAL_STATE, { type, payload }) => {
 
             draftState.slotsFinalCountdown.selectedIds =
                 draftState.slotsFinalCountdown.selectedIds.filter(selectedIndex => selectedIndex !== number)
+
+            return draftState;
+        case CHANGE_BET_AMOUNT:
+            const { amount } = payload;
+
+            draftState.slotsFinalCountdown.betAmount = Number(amount).toFixed(2);
 
             return draftState;
         default:
