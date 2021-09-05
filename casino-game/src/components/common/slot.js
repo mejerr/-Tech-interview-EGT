@@ -2,11 +2,16 @@ import React, { memo, useCallback } from 'react';
 import classNames from 'classnames';
 
 const Slot = memo((props) => {
-    const { number, isDisabled, isSelected, selectSlot } = props;
+    const { number, isDisabled, isSelected, selectSlot, deselectSlot } = props;
 
     const onClick = useCallback(() => {
-        selectSlot({ index: number - 1 });
-    }, [selectSlot, number]);
+        if (isSelected) {
+            deselectSlot({ number});
+            return;
+        }
+
+        selectSlot({ index: number });
+    }, [number, isSelected, selectSlot,deselectSlot]);
 
     return (
         <div className={classNames('slot-container', {
@@ -24,7 +29,8 @@ Slot.exportDefault = {
     number: -1,
     isDisabled: false,
     isSelected: false,
-    selectSlot: () => {}
+    selectSlot: () => {},
+    deselectSlot: () => {}
 };
 
 export default Slot;

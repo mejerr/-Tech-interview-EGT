@@ -1,5 +1,5 @@
 import produce from "immer"
-import { SELECT_SLOT, CONSUME_SLOTS } from '../constants/slots';
+import { SELECT_SLOT, CONSUME_SLOTS, DESELECT_SLOT } from '../constants/slots';
 
 const INITIAL_STATE = {
     slotsFinalCountdown: {
@@ -17,18 +17,16 @@ const reducer = produce((draftState = INITIAL_STATE, { type, payload }) => {
                 for(let i = 1; i <= 80; i++) {
                     slots.push({ index: i, isSelected: false });
                 }
-                console.log(slots)
+
                 draftState.slotsFinalCountdown.ids = slots;
             }
 
-
             return draftState;
-
         case SELECT_SLOT:
             const { index } = payload;
 
-            draftState.slotsFinalCountdown.ids[index] = {
-                ...draftState.slotsFinalCountdown.ids[index],
+            draftState.slotsFinalCountdown.ids[index - 1] = {
+                ...draftState.slotsFinalCountdown.ids[index - 1],
                 isSelected: true
             }
 
@@ -36,6 +34,18 @@ const reducer = produce((draftState = INITIAL_STATE, { type, payload }) => {
                 ...draftState.slotsFinalCountdown.selectedIds,
                 index
             ]
+
+            return draftState;
+        case DESELECT_SLOT:
+            const { number } = payload;
+
+            draftState.slotsFinalCountdown.ids[number - 1] = {
+                ...draftState.slotsFinalCountdown.ids[number - 1],
+                isSelected: false
+            }
+
+            draftState.slotsFinalCountdown.selectedIds =
+                draftState.slotsFinalCountdown.selectedIds.filter(selectedIndex => selectedIndex !== number)
 
             return draftState;
         default:
