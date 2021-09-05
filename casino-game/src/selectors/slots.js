@@ -1,8 +1,7 @@
 import { createSelector } from 'reselect'
+import { NAX_SLOTS_CLICKED } from '../constants/slots'
 
-export const maxSlotsCountSelector = createSelector(
-    (state, { selectedIds }) => selectedIds.length,
-    (selectedIdsLength) => {
-        return  selectedIdsLength > 12
-    }
+export const areSlotsDisabledSelector = createSelector(
+    (state) => state.slots.slotsFinalCountdown.selectedIds.length,
+    (selectedIdsLength) => selectedIdsLength >= NAX_SLOTS_CLICKED
   )

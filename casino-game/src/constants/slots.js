@@ -1,5 +1,4 @@
 export const CONSUME_SLOTS = 'CONSUME_SLOTS';
 export const SELECT_SLOT = 'SELECT_SLOT';
-export const SHOULD_DISABLE_SLOTS = 'SHOULD_DISABLE_SLOTS';
 
 export const NAX_SLOTS_CLICKED = 12;
