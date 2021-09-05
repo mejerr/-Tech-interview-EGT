@@ -1,11 +1,11 @@
 
 import {combineReducers } from "redux";
 import tabsReducer from './tabs';
-import slotsReducer from './slots';
+import slotsFinalCountdownReducer from './final-countdown-game';
 
 const rootReducer = combineReducers({
     tabs: tabsReducer,
-    slots: slotsReducer
+    finalCountdown: slotsFinalCountdownReducer
   });
 
   export default rootReducer;
