@@ -6,7 +6,6 @@ import {
     CHANGE_BET_AMOUNT,
     CHANGE_DRAW_COUNTS,
     CONSUME_COMMENTS,
-    OUTER_SELECT,
     REMOVE_DRAW_COUNT,
     ADD_DRAW_COUNT,
     ADD_BET_AMOUNT,
@@ -119,18 +118,6 @@ const reducer = produce((draftState = INITIAL_STATE, { type, payload = {} }) => 
             draftState.comments.ids = comments;
 
             return draftState;
-        // case OUTER_SELECT:
-        //     for (let i = 0; i <= draftState.selectedIds.length - 1; i++) {
-        //         if (draftState.comments.ids[i][0].postId === draftState.selectedIds[i]) {
-        //             console.log(123, draftState.comments.ids[i]);
-        //             draftState.comments.ids[i] = { ...draftState.comments.ids[draftState.comments.ids.length - 1], isSelected: true };
-        //         } else {
-        //             console.log(456, draftState.comments.ids);
-        //             draftState.comments.ids[i] = { ...draftState.comments.ids[draftState.comments.ids.length - 1], isSelected: false };
-        //         }
-        //     }
-
-        //     return draftState;
         default:
             return draftState;
     }

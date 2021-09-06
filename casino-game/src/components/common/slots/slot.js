@@ -11,7 +11,7 @@ const Slot = memo((props) => {
         }
 
         selectSlot({ index: number });
-    }, [number, isSelected, selectSlot,deselectSlot]);
+    }, [number, isSelected, selectSlot, deselectSlot]);
 
     return (
         <div className={classNames('slot-container', {

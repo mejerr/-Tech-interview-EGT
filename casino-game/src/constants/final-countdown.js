@@ -1,7 +1,6 @@
 export const CONSUME_SLOTS = 'CONSUME_SLOTS';
 export const SELECT_SLOT = 'SELECT_SLOT';
 export const DESELECT_SLOT = 'DESELECT_SLOT';
-export const OUTER_SELECT = 'OUTER_SELECT';
 
 export const ADD_DRAW_COUNT = 'ADD_DRAW_COUNT';
 export const REMOVE_DRAW_COUNT = 'REMOVE_DRAW_COUNT';

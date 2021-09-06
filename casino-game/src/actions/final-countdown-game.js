@@ -7,7 +7,6 @@ import {
     SHOW_COMMENTS,
     CONSUME_COMMENTS,
     INIT_COMMENTS,
-    OUTER_SELECT,
     ADD_DRAW_COUNT,
     REMOVE_DRAW_COUNT,
     ADD_BET_AMOUNT,
@@ -50,10 +49,6 @@ export const consumeComments = ({ comments }) => ({
 
 export const initComments = () => ({
     type: INIT_COMMENTS
-});
-
-export const outerSelect = () => ({
-    type: OUTER_SELECT
 });
 
 export const addBetAmount = () => ({
