@@ -1,4 +1,4 @@
-import { PLAY_GAME, SET_CURRENT_GAME } from '../constants/games';
+import { PLAY_GAME, SET_CURRENT_GAME, RESET_GAME_STATE } from '../constants/games';
 
 export const playGame = () => ({
     type: PLAY_GAME
@@ -7,4 +7,8 @@ export const playGame = () => ({
 export const setCurrentGame = ({ currentGame } = {}) => ({
     type: SET_CURRENT_GAME,
     payload: { currentGame }
+});
+
+export const resetGameState = () => ({
+    type: RESET_GAME_STATE
 });

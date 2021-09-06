@@ -3,16 +3,16 @@ import classNames from 'classnames';
 import { GAMES } from '../../constants/games';
 
 const Games = memo((props) => {
-    const { setCurrentGame, history } = props;
+    const { setCurrentGame, history, resetGameState } = props;
 
     const onClick = useCallback((game) => {
         if (game.isDisabled) {
             return;
         }
-
+        resetGameState();
         setCurrentGame({ currentGame: game });
         history.push('/');
-    }, [setCurrentGame, history]);
+    }, [setCurrentGame, history, resetGameState]);
 
     const renderGames = useCallback(({ gameName = '',gameIcon, gameAlt, title, isDisabled }, index) => {
         return (
@@ -37,6 +37,7 @@ const Games = memo((props) => {
 Games.defaultProps = {
     setCurrentGame: () => {},
     history: () => {},
+    resetGameState: () => {}
 }
 
 export default Games;

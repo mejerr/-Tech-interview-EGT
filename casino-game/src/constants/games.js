@@ -10,6 +10,7 @@ import soldIcon from '../assets/sold.png';
 
 export const PLAY_GAME = 'PLAY_GAME';
 export const SET_CURRENT_GAME = 'SET_CURRENT_GAME';
+export const RESET_GAME_STATE = 'RESET_GAME_STATE';
 
 export const FINAL_COUNTDOWN_GAME = 'FINAL_COUNTDOWN_GAME';
 

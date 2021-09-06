@@ -11,6 +11,7 @@ import {
     ADD_BET_AMOUNT,
     REMOVE_BET_AMOUNT
 } from '../constants/final-countdown';
+import { RESET_GAME_STATE } from '../constants/games';
 
 const INITIAL_STATE = {
     ids: [],
@@ -118,6 +119,9 @@ const reducer = produce((draftState = INITIAL_STATE, { type, payload = {} }) => 
             draftState.comments.ids = comments;
 
             return draftState;
+        case RESET_GAME_STATE:
+
+            return draftState = INITIAL_STATE;
         default:
             return draftState;
     }
