@@ -9,7 +9,8 @@ import {
     REMOVE_DRAW_COUNT,
     ADD_DRAW_COUNT,
     ADD_BET_AMOUNT,
-    REMOVE_BET_AMOUNT
+    REMOVE_BET_AMOUNT,
+    RESET_COMMENTS_STATE
 } from '../constants/final-countdown';
 import { RESET_GAME_STATE } from '../constants/games';
 
@@ -120,6 +121,11 @@ const reducer = produce((draftState = INITIAL_STATE, { type, payload = {} }) => 
 
             return draftState;
         case RESET_GAME_STATE:
+
+            return draftState = {
+                ...INITIAL_STATE
+        };
+        case RESET_COMMENTS_STATE:
 
             return draftState = {
                 ...INITIAL_STATE,

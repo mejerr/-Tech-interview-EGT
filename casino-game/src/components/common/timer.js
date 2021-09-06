@@ -7,8 +7,8 @@ import Loader from '../common/loader';
 
 const Timer = memo((props) => {
     const { onFinish } = props;
-    const [minutes, setMinutes] = useState(0);
-    const [seconds, setSeconds] =  useState(3);
+    const [minutes, setMinutes] = useState(2);
+    const [seconds, setSeconds] =  useState(59);
 
     useEffect(()=> {
         let myInterval = timerCounter({ minutes, seconds, setMinutes, setSeconds, onFinish });

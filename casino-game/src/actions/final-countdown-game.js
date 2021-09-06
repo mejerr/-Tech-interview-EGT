@@ -10,7 +10,8 @@ import {
     ADD_DRAW_COUNT,
     REMOVE_DRAW_COUNT,
     ADD_BET_AMOUNT,
-    REMOVE_BET_AMOUNT
+    REMOVE_BET_AMOUNT,
+    RESET_COMMENTS_STATE
 } from '../constants/final-countdown';
 
 
@@ -65,5 +66,9 @@ export const addDrawCount = () => ({
 
 export const removeDrawCount = () => ({
     type: REMOVE_DRAW_COUNT
+});
+
+export const resetCommentsState = () => ({
+    type: RESET_COMMENTS_STATE
 });
 

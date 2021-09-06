@@ -1,8 +1,7 @@
 import { call, put, select, takeLatest } from 'redux-saga/effects';
 import { showComments,  } from '../services/final-countdown-game';
-import { consumeComments  } from '../actions/final-countdown-game';
+import { consumeComments, resetCommentsState  } from '../actions/final-countdown-game';
 import { SHOW_COMMENTS, INIT_COMMENTS } from "../constants/final-countdown";
-import { resetGameState } from '../actions/games';
 
 function* onShowComments() {
     const selectedSlots = yield select(state => state.finalCountdown.selectedIds);
@@ -20,7 +19,7 @@ function* onShowComments() {
         }
 
         yield put(consumeComments({ comments }));
-        yield put(resetGameState());
+        yield put(resetCommentsState());
     }
     catch (error) {
         console.error(error);

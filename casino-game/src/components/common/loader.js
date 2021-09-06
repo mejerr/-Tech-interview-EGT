@@ -8,8 +8,7 @@ const Loader = memo((props) => {
     return (
         <div className={classNames('loader-container', {
             [className] : className
-            })}
-        >
+        })}>
             <LoaderSpinner className="loader-state" width={30} height={30} type="Puff" color="#FFFFFF"/>
         </div>
     );

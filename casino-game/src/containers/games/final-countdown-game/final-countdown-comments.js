@@ -3,7 +3,4 @@ import FinalCountDownComments from '../../../components/games/final-countdown-ga
 
 export default connect((state) => ({
     comments: state.finalCountdown.comments.ids
-}), {
-
-}
-)(FinalCountDownComments);
+}))(FinalCountDownComments);
