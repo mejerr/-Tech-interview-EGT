@@ -4,7 +4,7 @@ import BetAmount from '../../common/bet-amount';
 import DrawCountsField from '../../common/draw-counts-field';
 
 const FinalCountdownFooter = memo((props) => {
-    const { totalSum, drawCounts, betAmount, changeBetAmount, changeDrawCounts } = props;
+    const { totalSum, drawCounts, betAmount, changeBetAmount, changeDrawCounts, addDrawCount, removeDrawCount, addBetAmount, removeBetAmount } = props;
 
     return (
         <div className="final-countdown-footer-container">
@@ -13,11 +13,15 @@ const FinalCountdownFooter = memo((props) => {
                 className={'final-countdown'}
                 changeDrawCounts={changeDrawCounts}
                 drawCounts={drawCounts}
+                addDrawCount={addDrawCount}
+                removeDrawCount={removeDrawCount}
             />
             <BetAmount
                 className={'final-countdown'}
                 changeBetAmount={changeBetAmount}
                 amount={betAmount}
+                addBetAmount={addBetAmount}
+                removeBetAmount={removeBetAmount}
             />
         </div>
     );
@@ -28,7 +32,11 @@ FinalCountdownFooter.defaultProps = {
     betAmount: 1,
     drawCounts: 1,
     changeBetAmount: () => {},
-    changeDrawCounts: () => {}
+    changeDrawCounts: () => {},
+    removeDrawCount: () => {},
+    addDrawCount: () => {},
+    addBetAmount: () => {},
+    removeBetAmount: () => {}
 }
 
 export default FinalCountdownFooter;

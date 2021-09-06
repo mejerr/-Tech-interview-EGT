@@ -54,14 +54,13 @@
 }
 
 .final-countdown-footer-container .field-container .title {
-    width: 100%;
-    min-height: calc(50% + 10px);
+    width: calc(100% - 10px);
+    min-height: calc(50% - 10px);
     color: var(--color-white);
     border: none;
     background: var(--color-black);
     padding: 5px;
     display: flex;
-    align-items: center;
     justify-content: center;
 }
 
@@ -105,6 +104,10 @@
         width: 80px;
         height: 80px;
     }
+
+    .field-container .title {
+        font-size: 13px;
+    }
 }
 
 @media (max-width: 565px) {
@@ -142,6 +145,10 @@
         width: 60px;
         height: 60px;
     }
+
+    .final-countdown-footer-container .field-container .title {
+        font-size: 9px;
+    }
 }
 
 @media (max-height: 1000px) {
@@ -150,6 +157,10 @@
         height: 20px;
         top: 10px;
         right: 10px;
+    }
+
+    .field-container .title {
+        font-size: 13px;
     }
 }
 /*Comments*/
@@ -196,3 +207,30 @@
     margin-right: 7px;
 }
 /*Comments*/
+
+/*Buttons*/
+.final-countdown-buttons-container {
+    height: 50%;
+    width: 100%;
+    display: flex;
+}
+
+.final-countdown-buttons-content {
+    display: flex;
+    background: var(--color-white);
+}
+
+.final-countdown-buttons-content .final-countdown-button-container {
+    width: 20px;
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.final-countdown-buttons-content .final-countdown-button-container:hover {
+    background: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+/*Buttons*/

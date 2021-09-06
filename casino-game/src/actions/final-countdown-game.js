@@ -6,7 +6,12 @@ import {
     CHANGE_DRAW_COUNTS,
     SHOW_COMMENTS,
     CONSUME_COMMENTS,
-    INIT_COMMENTS
+    INIT_COMMENTS,
+    OUTER_SELECT,
+    ADD_DRAW_COUNT,
+    REMOVE_DRAW_COUNT,
+    ADD_BET_AMOUNT,
+    REMOVE_BET_AMOUNT
 } from '../constants/final-countdown';
 
 
@@ -45,5 +50,25 @@ export const consumeComments = ({ comments }) => ({
 
 export const initComments = () => ({
     type: INIT_COMMENTS
+});
+
+export const outerSelect = () => ({
+    type: OUTER_SELECT
+});
+
+export const addBetAmount = () => ({
+    type: ADD_BET_AMOUNT
+});
+
+export const removeBetAmount = () => ({
+    type: REMOVE_BET_AMOUNT
+});
+
+export const addDrawCount = () => ({
+    type: ADD_DRAW_COUNT
+});
+
+export const removeDrawCount = () => ({
+    type: REMOVE_DRAW_COUNT
 });
 

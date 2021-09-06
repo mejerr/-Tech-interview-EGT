@@ -4,5 +4,4 @@ import Header from '../../components/common/header';
 export default connect((state) => ({
 }), {
 
-}
-)(Header);
+})(Header);

@@ -23,7 +23,7 @@ const Games = memo((props) => {
                 <img className={gameAlt} src={gameIcon} alt={gameAlt} />
             </div>
         )
-    }, []);
+    }, [onClick]);
 
     return (
         <div className="games-container content">

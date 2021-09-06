@@ -1,11 +1,20 @@
 export const CONSUME_SLOTS = 'CONSUME_SLOTS';
 export const SELECT_SLOT = 'SELECT_SLOT';
 export const DESELECT_SLOT = 'DESELECT_SLOT';
+export const OUTER_SELECT = 'OUTER_SELECT';
 
+export const ADD_DRAW_COUNT = 'ADD_DRAW_COUNT';
+export const REMOVE_DRAW_COUNT = 'REMOVE_DRAW_COUNT';
+export const ADD_BET_AMOUNT = 'ADD_BET_AMOUNT';
+export const REMOVE_BET_AMOUNT = 'REMOVE_BET_AMOUNT';
 export const CHANGE_BET_AMOUNT = 'CHANGE_BET_AMOUNT';
 export const CHANGE_DRAW_COUNTS = 'CHANGE_DRAW_COUNTS';
+
 export const SHOW_COMMENTS = 'SHOW_COMMENTS';
 export const CONSUME_COMMENTS = 'CONSUME_COMMENTS';
 export const INIT_COMMENTS = 'INIT_COMMENTS';
+
+export const POSITIVE_TYPE = '+'
+export const NEGATIVE_TYPE = '-'
 
 export const NAX_SLOTS_CLICKED = 12;

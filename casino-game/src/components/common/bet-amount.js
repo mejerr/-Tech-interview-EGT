@@ -1,8 +1,9 @@
 import classNames from 'classnames';
 import React, { memo, useCallback } from 'react';
+import FinalCountdownButtons from '../games/final-countdown-game/final-countdown-buttons/final-countdown-buttons';
 
 const BetAmount = memo((props) => {
-    const { className, amount, changeBetAmount } = props;
+    const { className, amount, changeBetAmount, addBetAmount, removeBetAmount } = props;
 
     const onChange = useCallback((event) => {
         changeBetAmount({ amount: event.target.value})
@@ -14,7 +15,9 @@ const BetAmount = memo((props) => {
             })}
         >
             <div className="title">{"Bet"}</div>
-            <input className="field-number" value={amount} onChange={onChange}></input>
+            <FinalCountdownButtons addOneAmount={addBetAmount} removeOneAmount={removeBetAmount}>
+                <input className="field-number" value={amount} onChange={onChange}></input>
+            </FinalCountdownButtons>
         </div>
     );
 });
@@ -22,7 +25,9 @@ const BetAmount = memo((props) => {
 BetAmount.defaultProps = {
     className: '',
     amount: 1,
-    changeBetAmount: () => {}
+    changeBetAmount: () => {},
+    addBetAmount: () => {},
+    removeBetAmount: () => {}
 };
 
 export default BetAmount;

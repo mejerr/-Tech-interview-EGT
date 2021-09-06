@@ -1,8 +1,9 @@
 import classNames from 'classnames';
 import React, { memo, useCallback } from 'react';
+import FinalCountdownButtons from '../games/final-countdown-game/final-countdown-buttons/final-countdown-buttons';
 
 const DrawCountsField = memo((props) => {
-    const { className, drawCounts, changeDrawCounts } = props;
+    const { className, drawCounts, changeDrawCounts, addDrawCount, removeDrawCount} = props;
 
     const onChange = useCallback((event) => {
         changeDrawCounts({ counts: event.target.value})
@@ -14,7 +15,9 @@ const DrawCountsField = memo((props) => {
             })}
         >
             <div className="title">{"Draw counts"}</div>
-            <input className="field-number" value={drawCounts} onChange={onChange}></input>
+            <FinalCountdownButtons addOneAmout={addDrawCount} removeOneAmount={removeDrawCount}>
+                <input className="field-number" value={drawCounts} onChange={onChange}></input>
+            </FinalCountdownButtons>
         </div>
     );
 });
@@ -22,7 +25,9 @@ const DrawCountsField = memo((props) => {
 DrawCountsField.defaultProps = {
     className: '',
     amount: 1,
-    changeDrawCounts: () => {}
+    changeDrawCounts: () => {},
+    addDrawCount: () => {},
+    removeDrawCount: () => {}
 };
 
 export default DrawCountsField;

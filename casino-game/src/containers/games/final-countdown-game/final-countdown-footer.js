@@ -1,5 +1,12 @@
 import { connect } from 'react-redux';
-import { changeBetAmount, changeDrawCounts } from '../../../actions/final-countdown-game';
+import {
+    changeBetAmount,
+    changeDrawCounts,
+    removeDrawCount,
+    addDrawCount,
+    addBetAmount,
+    removeBetAmount
+} from '../../../actions/final-countdown-game';
 import FinalCountdownFooter from '../../../components/games/final-countdown-game/final-countdown-footer';
 
 export default connect((state) => ({
@@ -8,6 +15,9 @@ export default connect((state) => ({
     drawCounts: state.finalCountdown.drawCounts
 }), {
     changeBetAmount,
-    changeDrawCounts
-}
-)(FinalCountdownFooter);
+    changeDrawCounts,
+    removeDrawCount,
+    addDrawCount,
+    addBetAmount,
+    removeBetAmount
+})(FinalCountdownFooter);

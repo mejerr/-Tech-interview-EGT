@@ -3,8 +3,6 @@ import { setCurrentGame } from '../actions/games';
 import { withRouter } from 'react-router-dom';
 import App from '../components/App';
 
-export default withRouter(connect((state) => {
-
-}, {
+export default withRouter(connect(null, {
     setCurrentGame
 })(App));
