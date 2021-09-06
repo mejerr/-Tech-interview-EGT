@@ -23,6 +23,7 @@ const HeaderButtons = memo((props) => {
 
     return (
         <div className="header-buttons-container">
+            {/* Add a dropdown menu*/}
             <img className="header-menu-icon" src={menuIcon} alt="menu"></img>
             <div className="header-buttons">
                 <Button className={"Home"} title={"Home"} isActive={activeTab === HOME_TAB} onClick={navHome}/>
