@@ -2,10 +2,10 @@ import { call, put, select, takeLatest } from 'redux-saga/effects';
 import { showComments,  } from '../services/final-countdown-game';
 import { consumeComments  } from '../actions/final-countdown-game';
 import { SHOW_COMMENTS, INIT_COMMENTS } from "../constants/final-countdown";
+import { resetGameState } from '../actions/games';
 
 function* onShowComments() {
     const selectedSlots = yield select(state => state.finalCountdown.selectedIds);
-    const allComments = yield select(state => state.finalCountdown.comments.ids);
 
     if (!selectedSlots.length) {
         return;
@@ -16,17 +16,11 @@ function* onShowComments() {
         for (let slot of selectedSlots) {
             const { data } = yield call(showComments, { commentId: [slot] });
 
-            comments = allComments.reduce((accum, comment, index, arr) => {
-            if (allComments[index][0].postId === slot) {
-                accum = [...accum, data]
-            } else {
-                accum = arr;
-            }
-            return accum;
-            }, []);
+            comments.push(data)
         }
 
         yield put(consumeComments({ comments }));
+        yield put(resetGameState());
     }
     catch (error) {
         console.error(error);

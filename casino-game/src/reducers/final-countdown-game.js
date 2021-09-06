@@ -121,7 +121,10 @@ const reducer = produce((draftState = INITIAL_STATE, { type, payload = {} }) => 
             return draftState;
         case RESET_GAME_STATE:
 
-            return draftState = INITIAL_STATE;
+            return draftState = {
+                ...INITIAL_STATE,
+            comments: draftState.comments
+        };
         default:
             return draftState;
     }
